@@ -103,23 +103,18 @@ const ProjectsSection = () => {
               <motion.div
                 key={project.title}
                 variants={cardVariants}
-                whileHover={{ scale: 1.02 }}
-                className={`relative grid md:grid-cols-12 gap-6 items-center ${
-                  index % 2 === 1 ? "md:text-right" : ""
-                }`}
+                className="relative"
               >
-                {/* Project Image/Placeholder */}
                 <motion.div
-                  className={`md:col-span-7 ${
-                    index % 2 === 1 ? "md:col-start-6 md:order-2" : ""
-                  }`}
-                  whileHover={{ scale: 1.03, rotateY: 5 }}
+                  whileHover={{ y: -8 }}
                   transition={{ type: "spring", stiffness: 300 }}
+                  className={`bg-card border border-border/50 rounded-xl overflow-hidden`}
                 >
-                  <div className={`relative aspect-[16/10] bg-gradient-to-br ${project.color} rounded-lg overflow-hidden group cursor-pointer border border-border/50`}>
+                  {/* Project Image/Placeholder - Full Width */}
+                  <div className={`relative aspect-video bg-gradient-to-br ${project.color} overflow-hidden group cursor-pointer`}>
                     {/* Animated background pattern */}
                     <motion.div 
-                      className="absolute inset-0 opacity-30"
+                      className="absolute inset-0 opacity-40"
                       animate={{ 
                         backgroundPosition: ["0% 0%", "100% 100%"],
                       }}
@@ -133,10 +128,10 @@ const ProjectsSection = () => {
                         backgroundSize: "200% 200%",
                       }}
                     />
-                    <div className="absolute inset-0 bg-card/80 group-hover:bg-card/60 transition-all duration-500" />
-                    <div className="relative h-full flex items-center justify-center p-8">
+                    <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-all duration-500" />
+                    <div className="relative h-full flex items-center justify-center p-12">
                       <motion.span 
-                        className="text-4xl md:text-5xl font-bold gradient-text"
+                        className="text-5xl md:text-6xl font-bold gradient-text"
                         whileHover={{ scale: 1.1 }}
                         transition={{ type: "spring", stiffness: 400 }}
                       >
@@ -147,87 +142,66 @@ const ProjectsSection = () => {
                     <motion.div 
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       style={{
-                        background: "radial-gradient(circle at center, hsl(var(--primary) / 0.15) 0%, transparent 70%)",
+                        background: "radial-gradient(circle at center, hsl(var(--primary) / 0.2) 0%, transparent 70%)",
                       }}
                     />
                   </div>
-                </motion.div>
 
-                {/* Project Info */}
-                <div
-                  className={`md:col-span-6 md:absolute ${
-                    index % 2 === 1 ? "md:left-0" : "md:right-0"
-                  } md:top-1/2 md:-translate-y-1/2 z-10`}
-                >
-                  <motion.p 
-                    className="text-primary code-font text-sm mb-2"
-                    initial={{ opacity: 0, x: index % 2 === 1 ? -20 : 20 }}
-                    animate={isInView ? { opacity: 1, x: 0 } : {}}
-                    transition={{ delay: 0.3 + index * 0.1 }}
-                  >
-                    Featured Project
-                  </motion.p>
-                  <motion.h3 
-                    className="text-xl md:text-2xl font-bold text-foreground mb-4"
-                    whileHover={{ x: index % 2 === 1 ? -5 : 5 }}
-                  >
-                    {project.title}
-                  </motion.h3>
-                  <motion.div 
-                    className="bg-card/95 backdrop-blur-sm p-5 rounded-lg shadow-xl border border-border/50 mb-4"
-                    whileHover={{ 
-                      boxShadow: "0 20px 40px -15px hsl(var(--primary) / 0.2)",
-                      borderColor: "hsl(var(--primary) / 0.3)",
-                    }}
-                    transition={{ duration: 0.3 }}
-                  >
-                    <p className="text-muted-foreground text-sm leading-relaxed">
+                  {/* Project Info - Below Image */}
+                  <div className="p-8 md:p-10">
+                    <motion.p 
+                      className="text-primary code-font text-sm mb-3"
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={isInView ? { opacity: 1, x: 0 } : {}}
+                      transition={{ delay: 0.3 + index * 0.1 }}
+                    >
+                      Featured Project
+                    </motion.p>
+                    <motion.h3 
+                      className="text-2xl md:text-3xl font-bold text-foreground mb-5"
+                      whileHover={{ x: 5 }}
+                    >
+                      {project.title}
+                    </motion.h3>
+                    <p className="text-muted-foreground leading-relaxed mb-6 text-base">
                       {project.description}
                     </p>
-                  </motion.div>
-                  <div
-                    className={`flex flex-wrap gap-2 mb-4 ${
-                      index % 2 === 1 ? "md:justify-end" : ""
-                    }`}
-                  >
-                    {project.tech.map((tech, techIndex) => (
-                      <motion.span
-                        key={tech}
-                        className="text-xs text-primary/80 code-font bg-primary/10 px-2.5 py-1 rounded-full border border-primary/20"
-                        initial={{ opacity: 0, scale: 0.8 }}
-                        animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                        transition={{ delay: 0.5 + techIndex * 0.05 }}
-                        whileHover={{ scale: 1.1, backgroundColor: "hsl(var(--primary) / 0.2)" }}
+                    <div className="flex flex-wrap gap-2.5 mb-6">
+                      {project.tech.map((tech, techIndex) => (
+                        <motion.span
+                          key={tech}
+                          className="text-sm text-primary/90 code-font bg-primary/10 px-3 py-1.5 rounded-full border border-primary/20"
+                          initial={{ opacity: 0, scale: 0.8 }}
+                          animate={isInView ? { opacity: 1, scale: 1 } : {}}
+                          transition={{ delay: 0.5 + techIndex * 0.05 }}
+                          whileHover={{ scale: 1.1, backgroundColor: "hsl(var(--primary) / 0.2)" }}
+                        >
+                          {tech}
+                        </motion.span>
+                      ))}
+                    </div>
+                    <div className="flex gap-5">
+                      <motion.a
+                        href={project.github}
+                        className="text-muted-foreground hover:text-primary transition-colors p-2"
+                        aria-label="GitHub"
+                        whileHover={{ scale: 1.2, rotate: 5 }}
+                        whileTap={{ scale: 0.9 }}
                       >
-                        {tech}
-                      </motion.span>
-                    ))}
+                        <Github className="w-6 h-6" />
+                      </motion.a>
+                      <motion.a
+                        href={project.live}
+                        className="text-muted-foreground hover:text-primary transition-colors p-2"
+                        aria-label="Live Demo"
+                        whileHover={{ scale: 1.2, rotate: -5 }}
+                        whileTap={{ scale: 0.9 }}
+                      >
+                        <ExternalLink className="w-6 h-6" />
+                      </motion.a>
+                    </div>
                   </div>
-                  <div
-                    className={`flex gap-4 ${
-                      index % 2 === 1 ? "md:justify-end" : ""
-                    }`}
-                  >
-                    <motion.a
-                      href={project.github}
-                      className="text-muted-foreground hover:text-primary transition-colors p-2"
-                      aria-label="GitHub"
-                      whileHover={{ scale: 1.2, rotate: 5 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <Github className="w-5 h-5" />
-                    </motion.a>
-                    <motion.a
-                      href={project.live}
-                      className="text-muted-foreground hover:text-primary transition-colors p-2"
-                      aria-label="Live Demo"
-                      whileHover={{ scale: 1.2, rotate: -5 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      <ExternalLink className="w-5 h-5" />
-                    </motion.a>
-                  </div>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </motion.div>
