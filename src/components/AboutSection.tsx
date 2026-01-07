@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
+import profileImage from "@/assets/mariam-profile.png";
 
 const AboutSection = () => {
   const ref = useRef(null);
@@ -77,9 +78,11 @@ const AboutSection = () => {
             <div className="relative group">
               <div className="relative w-full aspect-square rounded-lg overflow-hidden">
                 <div className="absolute inset-0 bg-primary/20 group-hover:bg-transparent transition-all duration-300 z-10" />
-                <div className="w-full h-full bg-gradient-to-br from-primary/30 to-secondary flex items-center justify-center">
-                  <span className="text-6xl font-bold text-primary/50">MA</span>
-                </div>
+                <img 
+                  src={profileImage} 
+                  alt="Mariam Alsaeed" 
+                  className="w-full h-full object-cover object-top"
+                />
               </div>
               <div className="absolute inset-0 border-2 border-primary rounded-lg translate-x-4 translate-y-4 group-hover:translate-x-2 group-hover:translate-y-2 transition-transform duration-300 -z-10" />
             </div>
