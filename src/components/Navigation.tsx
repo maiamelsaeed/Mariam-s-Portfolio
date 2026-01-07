@@ -7,6 +7,7 @@ const navItems = [
   { name: "Experience", href: "#experience" },
   { name: "Skills", href: "#skills" },
   { name: "Projects", href: "#projects" },
+  { name: "Education", href: "#education" },
   { name: "Contact", href: "#contact" },
 ];
 
@@ -43,7 +44,7 @@ const Navigation = () => {
         </motion.a>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex items-center gap-8">
+        <ul className="hidden md:flex items-center gap-6 lg:gap-8">
           {navItems.map((item, index) => (
             <motion.li
               key={item.name}
@@ -60,7 +61,7 @@ const Navigation = () => {
           <motion.li
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0.6 }}
           >
             <a
               href="/resume.pdf"

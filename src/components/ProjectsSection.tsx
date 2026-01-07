@@ -5,26 +5,26 @@ import { ExternalLink, Github, Folder } from "lucide-react";
 
 const featuredProjects = [
   {
-    title: "E-Commerce Platform",
+    title: "EcoCycle",
     description:
-      "A full-stack e-commerce application with user authentication, product management, shopping cart, and secure payment integration. Built with React, Node.js, and MongoDB.",
-    tech: ["React", "Node.js", "MongoDB", "Express", "Stripe"],
+      "A scalable web application connecting users with eco-friendly recycling and donation services, enhanced with AI-powered DIY recommendations. Features RESTful APIs with Laravel, React front-end with Tailwind CSS, and Gemini AI integration for suggesting DIY project ideas.",
+    tech: ["Laravel", "React", "Tailwind CSS", "React Query", "MySQL", "Gemini AI"],
     github: "#",
     live: "#",
   },
   {
-    title: "Task Management System",
+    title: "BookShelf",
     description:
-      "A collaborative project management tool featuring real-time updates, team collaboration, task assignments, and progress tracking with an intuitive drag-and-drop interface.",
-    tech: ["TypeScript", "React", "Node.js", "PostgreSQL", "Socket.io"],
+      "A full-stack e-commerce platform for selling books with secure authentication, RESTful APIs for product and order management, real-time shopping cart, and integrated payment processing. Built with focus on scalability and user experience.",
+    tech: ["Angular", "Node.js", "Express.js", "MongoDB"],
     github: "#",
     live: "#",
   },
   {
-    title: "RESTful API Service",
+    title: "MovieQ",
     description:
-      "A scalable backend API service with JWT authentication, role-based access control, comprehensive documentation, and automated testing for enterprise applications.",
-    tech: ["Node.js", "Express", "TypeScript", "MySQL", "Jest"],
+      "A movie discovery platform inspired by TMDB, featuring user authentication, personalized favorites list, and AI-powered chat-based movie recommendations using Cohere AI. Designed with responsive Angular front-end for smooth browsing across devices.",
+    tech: ["Angular", "Firebase", "Cohere AI", "TypeScript"],
     github: "#",
     live: "#",
   },
@@ -32,19 +32,18 @@ const featuredProjects = [
 
 const otherProjects = [
   {
-    title: "Portfolio Website",
-    description: "A personal portfolio showcasing projects and skills with modern design.",
-    tech: ["React", "Tailwind CSS", "Framer Motion"],
+    title: "Game House",
+    description: "RAWG clone web app using their API. Features client state management with Zustand and server state with React Query.",
+    tech: ["React", "Vite", "TypeScript", "Zustand", "React Query", "Chakra UI"],
+    github: "#",
+    live: "#",
   },
   {
-    title: "Weather Dashboard",
-    description: "Real-time weather application with location-based forecasts.",
-    tech: ["React", "API Integration", "TypeScript"],
-  },
-  {
-    title: "Blog Platform",
-    description: "A full-featured blog with markdown support and user management.",
-    tech: ["Node.js", "MongoDB", "React"],
+    title: "Vestra E-commerce",
+    description: "Fully functional e-commerce website with user authentication, cart functionality with real-time updates, and order management using Firebase.",
+    tech: ["HTML", "CSS", "JavaScript", "Firebase"],
+    github: "#",
+    live: "#",
   },
 ];
 
@@ -83,10 +82,12 @@ const ProjectsSection = () => {
                     index % 2 === 1 ? "md:col-start-6" : ""
                   }`}
                 >
-                  <div className="project-card aspect-video bg-secondary/50 flex items-center justify-center">
-                    <span className="text-4xl font-bold text-primary/30">
-                      {project.title.charAt(0)}
-                    </span>
+                  <div className="project-card aspect-video bg-gradient-to-br from-primary/20 via-secondary to-card flex items-center justify-center overflow-hidden group">
+                    <div className="text-center p-6">
+                      <span className="text-5xl font-bold gradient-text">
+                        {project.title}
+                      </span>
+                    </div>
                   </div>
                 </div>
 
@@ -107,14 +108,14 @@ const ProjectsSection = () => {
                     </p>
                   </div>
                   <div
-                    className={`flex flex-wrap gap-2 mb-4 ${
+                    className={`flex flex-wrap gap-3 mb-4 ${
                       index % 2 === 1 ? "md:justify-end" : ""
                     }`}
                   >
                     {project.tech.map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs text-muted-foreground code-font"
+                        className="text-xs text-primary/80 code-font bg-primary/5 px-2 py-1 rounded"
                       >
                         {tech}
                       </span>
@@ -152,7 +153,7 @@ const ProjectsSection = () => {
             </h3>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-4">
+          <div className="grid md:grid-cols-2 gap-4">
             {otherProjects.map((project, index) => (
               <motion.div
                 key={project.title}
@@ -165,13 +166,13 @@ const ProjectsSection = () => {
                   <Folder className="w-10 h-10 text-primary" />
                   <div className="flex gap-3">
                     <a
-                      href="#"
+                      href={project.github}
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       <Github className="w-5 h-5" />
                     </a>
                     <a
-                      href="#"
+                      href={project.live}
                       className="text-muted-foreground hover:text-primary transition-colors"
                     >
                       <ExternalLink className="w-5 h-5" />
