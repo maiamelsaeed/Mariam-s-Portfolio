@@ -129,9 +129,9 @@ const ProjectsSection = () => {
                         <img 
                           src={project.image} 
                           alt={project.title}
-                          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-contain object-center"
                         />
-                        <div className="absolute inset-0 bg-background/20 group-hover:bg-background/0 transition-all duration-500" />
+                        <div className="absolute inset-0 bg-background/10 group-hover:bg-background/0 transition-all duration-500" />
                       </>
                     ) : (
                       <>
@@ -260,14 +260,14 @@ const ProjectsSection = () => {
                 className="project-card overflow-hidden flex flex-col h-full group cursor-pointer"
               >
                 {/* Project Image */}
-                <div className="relative aspect-video overflow-hidden">
-                  <img 
-                    src={project.image} 
-                    alt={project.title}
-                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-                  {/* Overlay links */}
+                 <div className="relative aspect-video overflow-hidden bg-muted/20">
+                   <img 
+                     src={project.image} 
+                     alt={project.title}
+                     className="w-full h-full object-contain object-center"
+                   />
+                   <div className="absolute inset-0 bg-gradient-to-t from-card/70 via-transparent to-transparent" />
+                   {/* Overlay links */}
                   <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <motion.a
                       href={project.github}
