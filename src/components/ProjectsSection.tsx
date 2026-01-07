@@ -129,7 +129,7 @@ const ProjectsSection = () => {
                         <img 
                           src={project.image} 
                           alt={project.title}
-                          className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                          className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
                         />
                         <div className="absolute inset-0 bg-background/20 group-hover:bg-background/0 transition-all duration-500" />
                       </>
@@ -264,7 +264,7 @@ const ProjectsSection = () => {
                   <img 
                     src={project.image} 
                     alt={project.title}
-                    className="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-110"
+                    className="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-110"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
                   {/* Overlay links */}
