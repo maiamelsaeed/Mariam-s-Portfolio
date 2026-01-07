@@ -7,6 +7,8 @@ import { ExternalLink, Github } from "lucide-react";
 import gameHouseImg from "@/assets/project-gamehouse.png";
 import movieQImg from "@/assets/project-movieq.png";
 import vestraImg from "@/assets/project-vestra.png";
+import bookshelfImg from "@/assets/project-bookshelf.png";
+import ecocycleImg from "@/assets/project-ecocycle.png";
 
 const featuredProjects = [
   {
@@ -16,7 +18,7 @@ const featuredProjects = [
     tech: ["Laravel", "React", "Tailwind CSS", "React Query", "MySQL", "Gemini AI"],
     github: "#",
     live: "#",
-    image: null,
+    image: ecocycleImg,
     color: "from-emerald-500/20 to-teal-600/20",
   },
   {
@@ -26,7 +28,7 @@ const featuredProjects = [
     tech: ["Angular", "Node.js", "Express.js", "MongoDB"],
     github: "#",
     live: "#",
-    image: null,
+    image: bookshelfImg,
     color: "from-orange-500/20 to-amber-600/20",
   },
   {
