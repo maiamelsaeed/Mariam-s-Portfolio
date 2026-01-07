@@ -7,14 +7,14 @@ const AboutSection = () => {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   const technologies = [
-    "React",
+    "React.js",
+    "Angular",
     "TypeScript",
     "Node.js",
-    "Express",
+    "Express.js",
+    "Laravel",
     "MongoDB",
-    "SQL",
-    "RESTful APIs",
-    "Git",
+    "PostgreSQL",
   ];
 
   return (
@@ -36,21 +36,23 @@ const AboutSection = () => {
               <p className="text-muted-foreground leading-relaxed">
                 Hello! I'm Mariam, a passionate Full Stack Developer based in Cairo, Egypt. 
                 I specialize in building modern, scalable, and user-focused web applications 
-                that solve real-world problems.
+                that solve real-world problems. I write clean code and love tackling complex 
+                challenges across the entire stack.
               </p>
               <p className="text-muted-foreground leading-relaxed">
-                I graduated from the{" "}
-                <span className="text-primary">Information Technology Institute (ITI)</span>{" "}
-                with intensive training in Full Stack Web Development, where I gained hands-on 
-                experience with both front-end and back-end technologies through collaborative 
-                projects and real-world scenarios.
+                I graduated from{" "}
+                <span className="text-primary">Mansoura University</span> and later completed 
+                an intensive 4-month training program at the{" "}
+                <span className="text-primary">Information Technology Institute (ITI)</span>,
+                focusing on Full Stack Web Development with hands-on experience in React, 
+                Angular, Node.js, and PHP through real-world collaborative projects.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Currently, I'm working at{" "}
                 <span className="text-primary">iLamp Marketing & Software Solutions</span>,
-                where I lead end-to-end development of multiple web projects, implementing 
-                scalable backend logic and delivering modern, responsive interfaces with a 
-                strong emphasis on usability and design consistency.
+                where I lead end-to-end development of web projects, implementing scalable 
+                backend logic with Node.js and TypeScript, and delivering modern, responsive 
+                interfaces with a strong emphasis on usability and design consistency.
               </p>
               <p className="text-muted-foreground leading-relaxed">
                 Here are some technologies I've been working with:

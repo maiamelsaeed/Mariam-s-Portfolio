@@ -15,7 +15,7 @@ const ContactSection = () => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
         >
-          <p className="text-primary code-font text-sm mb-4">05. What's Next?</p>
+          <p className="text-primary code-font text-sm mb-4">06. What's Next?</p>
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Get In Touch
           </h2>
