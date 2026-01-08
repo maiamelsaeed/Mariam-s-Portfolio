@@ -4,9 +4,9 @@ import {
   Github,
   Linkedin,
   Mail,
-  Sparkles,
   Phone,
   Code2,
+  Sparkles,
 } from "lucide-react";
 import { useState, useEffect } from "react";
 
@@ -225,57 +225,60 @@ const HeroSection = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.7 }}
-          className="flex items-center gap-6"
+          className="flex flex-col gap-4"
         >
-          {[
-            {
-              icon: Github,
-              href: "https://github.com/maiamelsaeed",
-              label: "GitHub",
-            },
-            {
-              icon: Linkedin,
-              href: "https://www.linkedin.com/in/mariam-alsaeed-bb8102268/",
-              label: "LinkedIn",
-            },
-            {
-              icon: Mail,
-              href: "mailto:mariam.elgalady1@gmail.com",
-              label: "Email",
-            },
-            {
-              icon: Phone,
-              href: "tel:+201065032665", 
-              label: "Phone",
-            },
-            {
-              icon: Code2,
-              href: "https://leetcode.com/u/YOUR_LEETCODE_USERNAME/",
-              label: "LeetCode",
-            },
-          ].map((social, index) => (
-            <motion.a
-              key={social.label}
-              href={social.href}
-              target={social.label !== "Email" ? "_blank" : undefined}
-              rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
-              className="text-muted-foreground hover:text-primary transition-colors duration-300"
-              aria-label={social.label}
-              whileHover={{ scale: 1.3, rotate: 5 }}
-              whileTap={{ scale: 0.9 }}
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.8 + index * 0.1 }}
-            >
-              <social.icon className="w-6 h-6" />
-            </motion.a>
-          ))}
-          <motion.div
-            className="h-px w-24 bg-muted-foreground/30"
-            initial={{ width: 0 }}
-            animate={{ width: 96 }}
-            transition={{ delay: 1.1, duration: 0.5 }}
-          />
+          <div className="flex items-center gap-6">
+            {[
+              { icon: Github, href: "https://github.com", label: "GitHub" },
+              {
+                icon: Linkedin,
+                href: "https://linkedin.com",
+                label: "LinkedIn",
+              },
+              {
+                icon: Code2,
+                href: "https://leetcode.com/yourusername",
+                label: "LeetCode",
+              },
+              { icon: Mail, href: "mailto:mariam@example.com", label: "Email" },
+            ].map((social, index) => (
+              <motion.a
+                key={social.label}
+                href={social.href}
+                target={social.label !== "Email" ? "_blank" : undefined}
+                rel={
+                  social.label !== "Email" ? "noopener noreferrer" : undefined
+                }
+                className="text-muted-foreground hover:text-primary transition-colors duration-300"
+                aria-label={social.label}
+                whileHover={{ scale: 1.3, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.8 + index * 0.1 }}
+              >
+                <social.icon className="w-6 h-6" />
+              </motion.a>
+            ))}
+            <motion.div
+              className="h-px w-24 bg-muted-foreground/30"
+              initial={{ width: 0 }}
+              animate={{ width: 96 }}
+              transition={{ delay: 1.1, duration: 0.5 }}
+            />
+          </div>
+
+          <motion.a
+            href="tel:+1234567890"
+            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 1.2 }}
+            whileHover={{ x: 5 }}
+          >
+            <Phone className="w-5 h-5" />
+            <span className="code-font">+1 (234) 567-890</span>
+          </motion.a>
         </motion.div>
 
         {/* Scroll indicator */}
