@@ -36,6 +36,42 @@ npm i
 npm run dev
 ```
 
+---
+
+## Enable HTTPS locally (dev-only) 🔒
+
+If you want your local dev server to use HTTPS (handy for testing OAuth, service workers, or any secure-only APIs), you can use mkcert to create locally-trusted certificates and enable them in Vite.
+
+1. Install mkcert
+
+- macOS: `brew install mkcert` and `brew install nss` (if you use Firefox)
+- Windows (Chocolatey): `choco install mkcert`
+- Linux: follow instructions at https://github.com/FiloSottile/mkcert
+
+2. Generate certs (project root)
+
+```sh
+mkdir -p certs
+mkcert -install
+# create certs for localhost and common dev hostnames
+mkcert localhost 127.0.0.1 ::1
+# mkcert will create: ./certs/localhost.pem and ./certs/localhost-key.pem
+mv localhost.pem ./certs/localhost.pem
+mv localhost-key.pem ./certs/localhost-key.pem
+```
+
+3. Enable HTTPS in development
+
+- Temporary (PowerShell): `$env:DEV_HTTPS = 'true'; npm run dev`
+- Temporary (Unix/macOS): `DEV_HTTPS=true npm run dev`
+- Persist via `.env.local`: add `DEV_HTTPS=true`
+
+The Vite config is set up to read `DEV_HTTPS=true` and will use the cert files from `./certs` if present. If `DEV_HTTPS` is true but the cert files aren't found, Vite will fall back to HTTP and print a message.
+
+Note: mkcert adds a local CA to your system so browsers trust the generated certs — follow mkcert's prompts during `mkcert -install`.
+
+---
+
 **Edit a file directly in GitHub**
 
 - Navigate to the desired file(s).

@@ -15,9 +15,16 @@ const featuredProjects = [
     title: "EcoCycle",
     description:
       "A scalable web application connecting users with eco-friendly recycling and donation services, enhanced with AI-powered DIY recommendations. Features RESTful APIs with Laravel, React front-end with Tailwind CSS, and Gemini AI integration for suggesting DIY project ideas.",
-    tech: ["Laravel", "React", "Tailwind CSS", "React Query", "MySQL", "Gemini AI"],
-    github: "#",
-    live: "#",
+    tech: [
+      "Laravel",
+      "React",
+      "Tailwind CSS",
+      "React Query",
+      "MySQL",
+      "Gemini AI",
+    ],
+    github: "https://github.com/EcoRenew",
+    live: "https://eco-cycle-client.vercel.app/",
     image: ecocycleImg,
     color: "from-emerald-500/20 to-teal-600/20",
   },
@@ -26,8 +33,8 @@ const featuredProjects = [
     description:
       "A full-stack e-commerce platform for selling books with secure authentication, RESTful APIs for product and order management, real-time shopping cart, and integrated payment processing. Built with focus on scalability and user experience.",
     tech: ["Angular", "Node.js", "Express.js", "MongoDB"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/maiamelsaeed/bookstore-server",
+    live: "https://book-store-client-ten-alpha.vercel.app/",
     image: bookshelfImg,
     color: "from-orange-500/20 to-amber-600/20",
   },
@@ -36,8 +43,8 @@ const featuredProjects = [
     description:
       "A movie discovery platform inspired by TMDB, featuring user authentication, personalized favorites list, and AI-powered chat-based movie recommendations using Cohere AI. Designed with responsive Angular front-end for smooth browsing across devices.",
     tech: ["Angular", "Firebase", "Cohere AI", "TypeScript"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/maiamelsaeed/Movies--Recommender-",
+    live: "https://movie-recommender-indol.vercel.app/",
     image: movieQImg,
     color: "from-purple-500/20 to-pink-600/20",
   },
@@ -46,18 +53,27 @@ const featuredProjects = [
 const otherProjects = [
   {
     title: "Game House",
-    description: "RAWG clone web app using their API. Features client state management with Zustand and server state with React Query.",
-    tech: ["React", "Vite", "TypeScript", "Zustand", "React Query", "Chakra UI"],
-    github: "#",
-    live: "#",
+    description:
+      "RAWG clone web app using their API. Features client state management with Zustand and server state with React Query.",
+    tech: [
+      "React",
+      "Vite",
+      "TypeScript",
+      "Zustand",
+      "React Query",
+      "Chakra UI",
+    ],
+    github: "https://github.com/maiamelsaeed/game-house",
+    live: "https://game-house-chi.vercel.app/",
     image: gameHouseImg,
   },
   {
     title: "Vestra E-commerce",
-    description: "Fully functional e-commerce website with user authentication, cart functionality with real-time updates, and order management using Firebase.",
+    description:
+      "Fully functional e-commerce website with user authentication, cart functionality with real-time updates, and order management using Firebase.",
     tech: ["HTML", "CSS", "JavaScript", "Firebase"],
-    github: "#",
-    live: "#",
+    github: "https://github.com/maiamelsaeed/Vestra",
+    live: "https://jsproj-group.web.app/",
     image: vestraImg,
   },
 ];
@@ -123,37 +139,40 @@ const ProjectsSection = () => {
                   className={`bg-card border border-border/50 rounded-xl overflow-hidden`}
                 >
                   {/* Project Image/Placeholder - Full Width */}
-                  <div className={`relative aspect-video bg-gradient-to-br ${project.color} overflow-hidden group cursor-pointer`}>
+                  <div
+                    className={`relative aspect-video bg-gradient-to-br ${project.color} overflow-hidden group cursor-pointer`}
+                  >
                     {project.image ? (
                       <>
-                        <img 
-                          src={project.image} 
+                        <img
+                          src={project.image}
                           alt={project.title}
-                          className="w-full h-full object-contain object-center"
+                          className="w-full h-full object-fit object-center block"
                         />
                         <div className="absolute inset-0 bg-background/10 group-hover:bg-background/0 transition-all duration-500" />
                       </>
                     ) : (
                       <>
                         {/* Animated background pattern */}
-                        <motion.div 
+                        <motion.div
                           className="absolute inset-0 opacity-40"
-                          animate={{ 
+                          animate={{
                             backgroundPosition: ["0% 0%", "100% 100%"],
                           }}
-                          transition={{ 
-                            duration: 20, 
-                            repeat: Infinity, 
-                            repeatType: "reverse" 
+                          transition={{
+                            duration: 20,
+                            repeat: Infinity,
+                            repeatType: "reverse",
                           }}
                           style={{
-                            backgroundImage: "radial-gradient(circle at 20% 80%, hsl(var(--primary)) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(var(--primary)) 0%, transparent 50%)",
+                            backgroundImage:
+                              "radial-gradient(circle at 20% 80%, hsl(var(--primary)) 0%, transparent 50%), radial-gradient(circle at 80% 20%, hsl(var(--primary)) 0%, transparent 50%)",
                             backgroundSize: "200% 200%",
                           }}
                         />
                         <div className="absolute inset-0 bg-background/60 group-hover:bg-background/40 transition-all duration-500" />
                         <div className="relative h-full flex items-center justify-center p-12">
-                          <motion.span 
+                          <motion.span
                             className="text-5xl md:text-6xl font-bold gradient-text"
                             whileHover={{ scale: 1.1 }}
                             transition={{ type: "spring", stiffness: 400 }}
@@ -164,17 +183,18 @@ const ProjectsSection = () => {
                       </>
                     )}
                     {/* Hover glow effect */}
-                    <motion.div 
+                    <motion.div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
                       style={{
-                        background: "radial-gradient(circle at center, hsl(var(--primary) / 0.2) 0%, transparent 70%)",
+                        background:
+                          "radial-gradient(circle at center, hsl(var(--primary) / 0.2) 0%, transparent 70%)",
                       }}
                     />
                   </div>
 
                   {/* Project Info - Below Image */}
                   <div className="p-8 md:p-10">
-                    <motion.p 
+                    <motion.p
                       className="text-primary code-font text-sm mb-3"
                       initial={{ opacity: 0, x: -20 }}
                       animate={isInView ? { opacity: 1, x: 0 } : {}}
@@ -182,7 +202,7 @@ const ProjectsSection = () => {
                     >
                       Featured Project
                     </motion.p>
-                    <motion.h3 
+                    <motion.h3
                       className="text-2xl md:text-3xl font-bold text-foreground mb-5"
                       whileHover={{ x: 5 }}
                     >
@@ -199,7 +219,10 @@ const ProjectsSection = () => {
                           initial={{ opacity: 0, scale: 0.8 }}
                           animate={isInView ? { opacity: 1, scale: 1 } : {}}
                           transition={{ delay: 0.5 + techIndex * 0.05 }}
-                          whileHover={{ scale: 1.1, backgroundColor: "hsl(var(--primary) / 0.2)" }}
+                          whileHover={{
+                            scale: 1.1,
+                            backgroundColor: "hsl(var(--primary) / 0.2)",
+                          }}
                         >
                           {tech}
                         </motion.span>
@@ -232,7 +255,7 @@ const ProjectsSection = () => {
           </motion.div>
 
           {/* Other Projects */}
-          <motion.div 
+          <motion.div
             className="text-center mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -243,7 +266,7 @@ const ProjectsSection = () => {
             </h3>
           </motion.div>
 
-          <motion.div 
+          <motion.div
             className="grid md:grid-cols-2 gap-5"
             variants={containerVariants}
             initial="hidden"
@@ -253,21 +276,21 @@ const ProjectsSection = () => {
               <motion.div
                 key={project.title}
                 variants={cardVariants}
-                whileHover={{ 
-                  y: -10, 
+                whileHover={{
+                  y: -10,
                   boxShadow: "0 20px 40px -15px hsl(var(--primary) / 0.25)",
                 }}
                 className="project-card overflow-hidden flex flex-col h-full group cursor-pointer"
               >
                 {/* Project Image */}
-                 <div className="relative aspect-video overflow-hidden bg-muted/20">
-                   <img 
-                     src={project.image} 
-                     alt={project.title}
-                     className="w-full h-full object-contain object-center"
-                   />
-                   <div className="absolute inset-0 bg-gradient-to-t from-card/70 via-transparent to-transparent" />
-                   {/* Overlay links */}
+                <div className="relative aspect-video overflow-hidden bg-muted/20">
+                  <img
+                    src={project.image}
+                    alt={project.title}
+                    className="w-full h-full object-cover object-center block"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-card/70 via-transparent to-transparent" />
+                  {/* Overlay links */}
                   <div className="absolute top-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <motion.a
                       href={project.github}
@@ -287,10 +310,10 @@ const ProjectsSection = () => {
                     </motion.a>
                   </div>
                 </div>
-                
+
                 {/* Project Info */}
                 <div className="p-6 flex-1 flex flex-col">
-                  <motion.h4 
+                  <motion.h4
                     className="text-lg font-semibold text-foreground mb-2 group-hover:text-primary transition-colors"
                     whileHover={{ x: 5 }}
                   >
