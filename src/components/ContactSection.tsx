@@ -105,40 +105,43 @@ const ContactSection = () => {
             </motion.span>
           </motion.a>
 
-          <motion.a
-            href="tel:+1234567890"
-            initial={{ opacity: 0 }}
-            animate={isInView ? { opacity: 1 } : {}}
-            transition={{ delay: 0.4 }}
-            className="inline-flex items-center justify-center gap-2 text-muted-foreground hover:text-primary transition-colors mt-6"
-          >
-            <Phone className="w-5 h-5" />
-            <span className="code-font text-lg">+1 (234) 567-890</span>
-          </motion.a>
-
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.5, delay: 0.5 }}
-            className="flex items-center justify-center gap-4 mt-12"
+            className="flex flex-col items-center gap-6 mt-12"
           >
-            {socialLinks.map((social, index) => (
-              <motion.a
-                key={social.label}
-                href={social.href}
-                target={social.label !== "Email" ? "_blank" : undefined}
-                rel={social.label !== "Email" ? "noopener noreferrer" : undefined}
-                className={`p-4 rounded-full border border-border text-muted-foreground hover:text-white hover:border-transparent transition-all duration-300 ${social.color}`}
-                aria-label={social.label}
-                whileHover={{ scale: 1.2, rotate: 10 }}
-                whileTap={{ scale: 0.9 }}
-                initial={{ opacity: 0, y: 20 }}
-                animate={isInView ? { opacity: 1, y: 0 } : {}}
-                transition={{ delay: 0.6 + index * 0.1 }}
-              >
-                <social.icon className="w-6 h-6" />
-              </motion.a>
-            ))}
+            <div className="flex items-center gap-4">
+              {socialLinks.map((social, index) => (
+                <motion.a
+                  key={social.label}
+                  href={social.href}
+                  target={social.label !== "Email" && social.label !== "Phone" ? "_blank" : undefined}
+                  rel={social.label !== "Email" && social.label !== "Phone" ? "noopener noreferrer" : undefined}
+                  className={`p-4 rounded-full border border-border text-muted-foreground hover:text-white hover:border-transparent transition-all duration-300 ${social.color}`}
+                  aria-label={social.label}
+                  whileHover={{ scale: 1.2, rotate: 10 }}
+                  whileTap={{ scale: 0.9 }}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ delay: 0.6 + index * 0.1 }}
+                >
+                  <social.icon className="w-6 h-6" />
+                </motion.a>
+              ))}
+            </div>
+            
+            <motion.a
+              href="tel:+1234567890"
+              initial={{ opacity: 0 }}
+              animate={isInView ? { opacity: 1 } : {}}
+              transition={{ delay: 0.9 }}
+              className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Phone className="w-5 h-5" />
+              <span className="code-font text-lg">+1 (234) 567-890</span>
+            </motion.a>
           </motion.div>
 
           {/* Fun animated dots */}
