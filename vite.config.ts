@@ -12,12 +12,18 @@ export default defineConfig(({ mode }) => {
 
   if (useHttps) {
     try {
-      const key = fs.readFileSync(path.resolve(__dirname, "certs/localhost-key.pem"));
-      const cert = fs.readFileSync(path.resolve(__dirname, "certs/localhost.pem"));
+      const key = fs.readFileSync(
+        path.resolve(__dirname, "certs/localhost-key.pem")
+      );
+      const cert = fs.readFileSync(
+        path.resolve(__dirname, "certs/localhost.pem")
+      );
       httpsConfig = { key, cert };
       console.log("Using local HTTPS certs from ./certs (DEV_HTTPS=true)");
     } catch (e) {
-      console.warn("DEV_HTTPS is true but certs not found in ./certs. Falling back to HTTP.");
+      console.warn(
+        "DEV_HTTPS is true but certs not found in ./certs. Falling back to HTTP."
+      );
       httpsConfig = false;
     }
   }
@@ -28,7 +34,9 @@ export default defineConfig(({ mode }) => {
       port: 8080,
       ...(httpsConfig ? { https: httpsConfig } : {}),
     },
-    plugins: [react(), mode === "development" && componentTagger()].filter(Boolean),
+    plugins: [react(), mode === "development" && componentTagger()].filter(
+      Boolean
+    ),
     resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
