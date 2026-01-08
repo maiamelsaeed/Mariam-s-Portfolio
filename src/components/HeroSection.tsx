@@ -142,7 +142,7 @@ const HeroSection = () => {
           transition={{ duration: 0.5, delay: 0.4 }}
           className="text-3xl md:text-5xl lg:text-6xl font-bold text-muted-foreground mb-6"
         >
-          I build things for the web.
+          Passionate Full Stack Developer.
         </motion.h2>
 
         <motion.div

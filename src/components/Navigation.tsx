@@ -64,7 +64,7 @@ const Navigation = () => {
             transition={{ delay: 0.6 }}
           >
             <a
-              href="/resume.pdf"
+              href="/src/assets/MariamAlsaeedMohamedMohamedCv.pdf"
               target="_blank"
               className="px-4 py-2 rounded-lg border border-primary text-primary text-sm font-medium hover:bg-primary/10 transition-all duration-300"
             >
@@ -99,7 +99,9 @@ const Navigation = () => {
                     onClick={() => setIsMobileMenuOpen(false)}
                     className="nav-link text-lg font-medium"
                   >
-                    <span className="text-primary code-font">0{index + 1}.</span>{" "}
+                    <span className="text-primary code-font">
+                      0{index + 1}.
+                    </span>{" "}
                     {item.name}
                   </a>
                 </li>
