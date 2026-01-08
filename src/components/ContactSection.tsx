@@ -105,6 +105,17 @@ const ContactSection = () => {
             </motion.span>
           </motion.a>
 
+          <motion.a
+            href="tel:+1234567890"
+            initial={{ opacity: 0 }}
+            animate={isInView ? { opacity: 1 } : {}}
+            transition={{ delay: 0.4 }}
+            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors mt-4"
+          >
+            <Phone className="w-5 h-5" />
+            <span className="code-font">+1 (234) 567-890</span>
+          </motion.a>
+
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
