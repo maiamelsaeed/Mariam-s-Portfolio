@@ -18,31 +18,26 @@ const ContactSection = () => {
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com",
+      href: "https://github.com/maiamelsaeed",
       label: "GitHub",
       color: "hover:bg-gray-800",
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com",
+      href: "https://www.linkedin.com/in/mariam-alsaeed-bb8102268/",
       label: "LinkedIn",
       color: "hover:bg-blue-600",
     },
     {
       icon: Code2,
-      href: "https://leetcode.com/yourusername",
+      href: "https://leetcode.com/u/mar_yumm1/",
       label: "LeetCode",
       color: "hover:bg-orange-500",
     },
-    {
-      icon: Phone,
-      href: "tel:+1234567890",
-      label: "Phone",
-      color: "hover:bg-green-600",
-    },
+
     {
       icon: Send,
-      href: "mailto:mariam@example.com",
+      href: "mailto:mariam.elgalady1@gmail.com",
       label: "Email",
       color: "hover:bg-primary",
     },
@@ -187,7 +182,7 @@ const ContactSection = () => {
               whileHover={{ scale: 1.05 }}
             >
               <Phone className="w-5 h-5" />
-              <span className="code-font text-lg">+1 (234) 567-890</span>
+              <span className="code-font text-lg">(+20)1065032665</span>
             </motion.a>
           </motion.div>
 
