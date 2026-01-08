@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import resumePdf from "@/assets/MariamAlsaeedMohamedMohamedCv.pdf";
 
 const navItems = [
   { name: "About", href: "#about" },
@@ -64,9 +65,10 @@ const Navigation = () => {
             transition={{ delay: 0.6 }}
           >
             <a
-              href="/src/assets/MariamAlsaeedMohamedMohamedCv.pdf"
-              target="_blank"
+              href={resumePdf}
+              download
               className="px-4 py-2 rounded-lg border border-primary text-primary text-sm font-medium hover:bg-primary/10 transition-all duration-300"
+              aria-label="Download resume"
             >
               Resume
             </a>
@@ -108,8 +110,8 @@ const Navigation = () => {
               ))}
               <li>
                 <a
-                  href="/resume.pdf"
-                  target="_blank"
+                  href={resumePdf}
+                  download
                   className="px-6 py-3 rounded-lg border border-primary text-primary font-medium hover:bg-primary/10 transition-all duration-300"
                 >
                   Resume
