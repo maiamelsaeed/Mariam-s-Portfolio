@@ -1,5 +1,5 @@
 import { motion } from "framer-motion";
-import { ArrowDown, Github, Linkedin, Mail, Sparkles } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Phone, Code2, Sparkles } from "lucide-react";
 import { useState, useEffect } from "react";
 
 const roles = [
@@ -214,6 +214,8 @@ const HeroSection = () => {
           {[
             { icon: Github, href: "https://github.com", label: "GitHub" },
             { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
+            { icon: Code2, href: "https://leetcode.com/yourusername", label: "LeetCode" },
+            { icon: Phone, href: "tel:+1234567890", label: "Phone" },
             { icon: Mail, href: "mailto:mariam@example.com", label: "Email" },
           ].map((social, index) => (
             <motion.a

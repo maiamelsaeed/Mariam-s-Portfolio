@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Mail, Github, Linkedin, Send, Rocket } from "lucide-react";
+import { Mail, Github, Linkedin, Send, Rocket, Phone, Code2 } from "lucide-react";
 
 const ContactSection = () => {
   const ref = useRef(null);
@@ -10,6 +10,8 @@ const ContactSection = () => {
   const socialLinks = [
     { icon: Github, href: "https://github.com", label: "GitHub", color: "hover:bg-gray-800" },
     { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn", color: "hover:bg-blue-600" },
+    { icon: Code2, href: "https://leetcode.com/yourusername", label: "LeetCode", color: "hover:bg-orange-500" },
+    { icon: Phone, href: "tel:+1234567890", label: "Phone", color: "hover:bg-green-600" },
     { icon: Send, href: "mailto:mariam@example.com", label: "Email", color: "hover:bg-primary" },
   ];
 
