@@ -63,7 +63,7 @@ const HeroSection = () => {
   const name = "Mariam Alsaeed.";
 
   return (
-    <section className="min-h-screen flex items-center justify-center relative overflow-hidden section-padding pt-32">
+    <section className="min-h-[calc(100vh-4rem)] md:min-h-screen flex items-center justify-center relative overflow-hidden section-padding pt-20 md:pt-32">
       {/* Animated grid background */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div
